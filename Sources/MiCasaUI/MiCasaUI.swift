@@ -14,6 +14,49 @@
   limitations under the License.
 */
 
-struct MiCasaUI {
-    var text = "Hello, World!"
+import Foundation
+import MiCasaPlugin
+
+struct MiCasaUIConfiguration: Codable {
+  var port: Int16
+}
+
+
+public class MiCasaUI: MiCasaPlugin {
+
+  // MARK: - Private Properties
+
+  private var instanceId = UUID()
+  private var config: MiCasaUIConfiguration!
+
+  // MARK: - Initialization
+
+  public override init?(apiGateway gateway: ApiGateway, configuration: Data) throws {
+    try super.init(apiGateway: gateway, configuration: configuration)
+    config = try self.configuration(configuration)
+  }
+
+    // MARK: - Hashable
+
+  public static func == (lhs: MiCasaUI, rhs: MiCasaUI) -> Bool {
+    return lhs.instanceId == rhs.instanceId
+  }
+
+  open override func hash(into hasher: inout Hasher) {
+    hasher.combine(instanceId)
+  }
+
+  // MARK: - API
+
+  /// This method starts the plugin.
+  open override func start() throws {
+    // Empty by design
+  }
+
+  /// This method stops the plugin.
+  ///
+  /// The method is called before the bridge stops or is about to restart.
+  open override func stop() throws {
+    // Empty by design
+  }
 }
