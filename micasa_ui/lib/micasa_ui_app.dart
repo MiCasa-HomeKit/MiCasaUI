@@ -14,9 +14,21 @@
   limitations under the License.
 */
 
-import XCTest
-import Quick
+import 'package:flutter/material.dart';
 
-QCKMain([
-  WebLibraryProviderSpec.self
-])
+import 'package:micasa_ui/micasa_ui_homepage.dart';
+
+class MiCasaUIApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: MiCasaUIHomePage(title: "MiCasa Control Center"),
+        theme: ThemeData(
+          // Define the default brightness and colors.
+          brightness: Brightness.dark,
+          accentColor: Colors.grey,
+          fontFamily: 'Helvetica Neue',
+        ));
+  }
+}

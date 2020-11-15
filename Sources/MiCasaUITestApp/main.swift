@@ -14,9 +14,6 @@
   limitations under the License.
 */
 
-import XCTest
-import Quick
+import Foundation
 
-QCKMain([
-  WebLibraryProviderSpec.self
-])
+try MiCasaUITestApp.shared.run()
