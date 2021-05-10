@@ -14,9 +14,17 @@
   limitations under the License.
 */
 
-import XCTest
+import Foundation
 import Quick
+import Nimble
 
-QCKMain([
-  WebLibraryProviderSpec.self
-])
+@testable import MiCasaUI
+
+final class MiCasaUISpec: QuickSpec {
+
+  private let pluginBuilder = MiCasaUIPluginBuilder()
+
+  override func spec() {
+
+  }
+}

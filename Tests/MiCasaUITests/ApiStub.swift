@@ -14,9 +14,42 @@
   limitations under the License.
 */
 
-import XCTest
-import Quick
+import Foundation
+import HAP
+import MiCasaPlugin
 
-QCKMain([
-  WebLibraryProviderSpec.self
-])
+class ApiStub: ApiGateway {
+  var accessories: [Accessory]
+
+  public init(accessories: [Accessory]) {
+    self.accessories = accessories
+  }
+
+  func restart() {
+
+  }
+
+  func info(plugin: MiCasaPlugin, message: String) {
+
+  }
+
+  func warning(plugin: MiCasaPlugin, message: String) {
+
+  }
+
+  func error(plugin: MiCasaPlugin, message: String) {
+
+  }
+
+  func critical(plugin: MiCasaPlugin, message: String) {
+
+  }
+
+  func debug(plugin: MiCasaPlugin, message: String) {
+
+  }
+
+  func trace(plugin: MiCasaPlugin, message: String) {
+
+  }
+}
